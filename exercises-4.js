@@ -1,6 +1,6 @@
 function cariModus(arr) {
     // you can only write your code here!
-    const 
+    const tes = []
   }
   
   // TEST CASES
