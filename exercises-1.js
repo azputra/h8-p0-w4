@@ -1,10 +1,12 @@
 function angkaPrima(angka) {
     // you can only write your code here!
-    if (angka === 3 || angka === 2 || angka === 7 || angka === 5 || angka === 23) {
-        return true
-    } else if (angka % 3 === 0 || angka % 2 === 0 || angka % 7 === 0 || angka % 5 === 0){
-        return false
+    let result = true;
+    for (let i = 2; i < angka; i++) {
+        if (angka % i === 0) {
+            result = false
+        }
     }
+    return result
 }
   
   // TEST CASES
