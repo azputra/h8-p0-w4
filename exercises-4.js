@@ -9,13 +9,28 @@ function cariModus(arr) {
       }
     }
   }
-  // console.log(arr)
   var angka = [];
   var jumlahAngka = [];
   for (let i = 0; i < arr.length; i++) {
     var tempAngka = angka.indexOf(arr[i])
-    console.log(tempAngka)
+    if (tempAngka === -1) {
+      angka.push(arr[i]);
+      jumlahAngka.push(1);
+    } else {
+      jumlahAngka[tempAngka]++
+    }
   }
+  var munculAngkaTerbanyak = 0
+  for (let i = 0; i < jumlahAngka.length; i++) {
+    if (munculAngkaTerbanyak < jumlahAngka[i]) {
+      munculAngkaTerbanyak = jumlahAngka[i]
+    }
+  }
+  var indexJumlahTerbanyak = jumlahAngka.indexOf(munculAngkaTerbanyak)
+  if (munculAngkaTerbanyak === 1 || angka.length <= 1) {
+    return -1
+  }
+  return angka[indexJumlahTerbanyak]
 }
 
 // TEST CASES
