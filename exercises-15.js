@@ -1,6 +1,7 @@
 function highestScore (students) {
     // Code disini
     const objStudent = {};
+    // console.log(objStudent[students[0]["class"]] === undefined)
     for (let i = 0; i < students.length; i++) {
       if (objStudent[students[i]["class"]] === undefined) {
         objStudent[students[i]["class"]] = {

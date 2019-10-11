@@ -1,5 +1,6 @@
 function graduates (students) {
     // Code disini
+    var arr =[]
     const objStudent = {};
     for (let i = 0; i < students.length; i++) {
         if (objStudent[students[i]["class"]] === undefined) {
@@ -16,7 +17,8 @@ function graduates (students) {
             }
         }
     }
-    return objStudent
+    arr.push(objStudent)
+    return arr
   }
   
   console.log(graduates([

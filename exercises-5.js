@@ -1,20 +1,22 @@
 function ubahHuruf(kata) {
     // you can only write your code here!
     let result = "";
-    const abjad = "abcdefghijklmnopqrstuvwxyz";
-    for (let i = 0; i < kata.length; i++) {
-        for (let j = 0; j < abjad.length; j++) {
-            if (kata[i] === abjad[j]) {
-                result += abjad[j+1]
-            }
+    for (let j = 0; j < kata.length; j++) {
+        var ubahAscii = kata[j].charCodeAt(0)
+        if (ubahAscii === 122 || ubahAscii === 90) {
+            ubahAscii -= 25
+        } else {
+            ubahAscii += 1
         }
+        var ubahHuruf = String.fromCharCode(ubahAscii)
+        result += ubahHuruf
     }
     return result
-  }
-  
-  // TEST CASES
-  console.log(ubahHuruf('wow')); // xpx
-  console.log(ubahHuruf('developer')); // efwfmpqfs
-  console.log(ubahHuruf('javascript')); // kbwbtdsjqu
-  console.log(ubahHuruf('keren')); // lfsfo
-  console.log(ubahHuruf('semangat')); // tfnbohbu
+}
+
+// TEST CASES
+console.log(ubahHuruf('wow')); // xpx
+console.log(ubahHuruf('developer')); // efwfmpqfs
+console.log(ubahHuruf('javascript')); // kbwbtdsjqu
+console.log(ubahHuruf('keren')); // lfsfo
+console.log(ubahHuruf('semangat')); // tfnbohbu
